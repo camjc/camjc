@@ -1,0 +1,76 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+
+$public_path: "//camjc.cdnconnect.com/";
+
+@mixin svg-wfallback($name) {
+  background-image: url('#{$public_path}#{$name}.png');
+  background-image: none, url('#{$public_path}#{$name}.svg');
+}
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+
+html{
+  box-shadow: inset 0 -0.2em 0 0 #74CAE6;
+  background-color:#F5F4ED;
+  color:#525B5F;
+  font-family:lato, sans-serif;
+  font-weight:700;
+  line-height:2;
+  font-size:1.5em;
+  min-height:100%;
+}
+
+body{
+  padding: 1em;
+}
+
+.details{
+  font-weight:300;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+  &:hover{
+    text-decoration:underline;
+  }
+}
+
+.contactinfo{
+  margin:auto;
+  width:100%;
+  max-width:500px;
+  min-width:260px;
+  @include transition(padding-top 1s);
+}
+
+.contactinfo{
+  text-align:right;
+  padding-right:.25em;
+}
+
+.logo{
+  @include svg-wfallback(CamJC_logo_crop);
+  height:130px;
+  background-repeat: no-repeat;
+  background-size:contain;
+  margin-bottom:0.5em;
+  background-position-y: bottom;
+}
+
+  @media (min-height: 650px) {
+    .contactinfo{
+      padding-top:5em;
+    }
+  }
+  @media (min-width: 540px) {
+    html{
+      font-size:2.5em;
+    }
+  }
