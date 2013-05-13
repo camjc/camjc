@@ -12,12 +12,16 @@ $public_path: "//camjc.cdnconnect.com/";
   background-image: none, url('#{$public_path}#{$name}.svg');
 }
 
+.hide{
+  display:none;
+}
+
 html{
   box-shadow: inset 0 -0.2em 0 0 #74CAE6;
   background-color:#F5F4ED;
   color:#525B5F;
   font-family:lato, sans-serif;
-  font-weight:700;
+  font-weight:300;
   line-height:2;
   font-size:1.5em;
   min-height:100%;
@@ -27,8 +31,8 @@ body{
   padding: 1em;
 }
 
-.details{
-  font-weight:300;
+.fn{
+  font-weight:700;
 }
 
 a{
@@ -39,17 +43,13 @@ a{
   }
 }
 
-.contactinfo{
+.vcard{
   margin:auto;
   width:100%;
   max-width:500px;
   min-width:260px;
   @include transition(padding-top 1s);
-}
-
-.contactinfo{
   text-align:right;
-  padding-right:.25em;
 }
 
 .logo{
@@ -62,7 +62,7 @@ a{
 }
 
   @media (min-height: 650px) {
-    .contactinfo{
+    .vcard{
       padding-top:5em;
     }
   }
